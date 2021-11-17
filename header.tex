@@ -1,0 +1,70 @@
+\documentclass[aspectratio=169\ifdefined\handout, handout\fi]{beamer}
+
+\usepackage[italian]{babel}
+\usepackage{tikz, cclicenses}
+
+% FONT
+\usepackage{fontspec}
+\setmainfont[Scale=MatchLowercase, Ligatures=TeX]{MagicSchoolTwo.ttf}
+\setbeamerfont{frametitle}{family=\rmfamily, size=\LARGE}
+\setbeamertemplate{frametitle}[default][center]
+\setbeamerfont{title}{family=\rmfamily, size=\Huge}
+\setbeamerfont{subtitle}{family=\rmfamily, size=\Large}
+\setbeamerfont{author}{family=\rmfamily, size=\Large}
+\setbeamerfont{institute}{family=\rmfamily, size=\large}
+\setbeamerfont{date}{family=\rmfamily}
+\setbeamerfont{section name}{family=\rmfamily}
+\setbeamerfont{section title}{family=\rmfamily, size=\Huge}
+
+% COLOR
+\definecolor{gred}{rgb}{0.45,0,0}
+\setbeamercolor{frametitle}{fg=gred}
+\setbeamercolor{section title}{fg=gred}
+\setbeamercolor{title}{fg=gred}
+\setbeamercolor{subtitle}{fg=gred}
+\setbeamercolor{item}{fg=gred}
+
+% BACKGROUND and TRANSITION
+\ifdefined\handout
+  \def\transition{}
+\else
+  \def\transition{\transfade}
+  \setbeamertemplate{background canvas}{
+    \includegraphics[width=\paperwidth,height=\paperheight]{parchment.jpg}
+  }
+\fi
+
+\beamertemplatenavigationsymbolsempty
+
+% FRAME ENV
+\newenvironment{myframe}[1]{\begin{frame}{#1}\transition\centering}{\end{frame}}
+\def\sectionname{Sezione}
+\AtBeginSection{\frame{\transition\centering\sectionpage}}
+
+% STRIKEOUT
+\usepackage{soul}
+\newcommand<>{\stafter}[1]{%
+  \ifdefined\handout\st{#1}\else%
+    \only#2{#1}%
+    \invisible#2{\st{#1}}%
+  \fi%
+}
+
+% METADATA
+\title[Difesa contro le Arti Oscure]{Difesa contro le Arti Oscure\\\Large Corso introduttivo alla sicurezza informatica}
+\author{Davide Peressoni}
+\institute[]{Commissione Informatica\\Collegio Universitario don Nicola Mazza}
+\let\oldmaketitle\maketitle
+\renewcommand\maketitle{
+  \begin{frame}\transition
+    \oldmaketitle
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south east, xshift=-40pt]%
+        at (current page.south east)
+        {\includegraphics[height=70pt]{Cominfo}};
+    \end{tikzpicture}
+  \end{frame}
+  \frame{\transition
+    \tiny\input{license.tex}
+  }
+}

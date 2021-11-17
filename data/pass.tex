@@ -1,0 +1,94 @@
+ \section{Password}
+
+\begin{myframe}{Data breach}
+  Sebbene i server siano protetti, può capitare che un hacker/cracker vi acceda (ad esempio mediante una \emph{SQL injection}) e riesca a leggere i dati degli utenti.
+
+  \pause\medskip
+  I dati ottenuti vengono spesso venduti (dai cracker) ad aziende interessate oppure resi pubblici (dagli hacker) affinché i gestori del servizio riparino le falle e gli utenti cambino le proprie credenziali.
+
+  \pause\medskip
+  Ci sono dei servizi gratuiti che ti informano se il tuo utente è stato violato, come \href{https://haveibeenpwned.com/}{Have I Been Pwned?} e \href{https://monitor.firefox.com/}{Firefox Monitor}.
+\end{myframe}
+
+\begin{myframe}{Firefox Monitor}
+  \begin{tikzpicture}
+    \node at (0,0) {\includegraphics[width=\textwidth]{img/monitor}};
+    \draw[gred, rounded corners] (-4,-1.7) node (A){} rectangle +(2,0.3);
+    \draw[<-, gred] (A) +(0,0.15) -- +(-1.5,0.7) node[anchor=south] {Sito violato};
+    \draw[gred, rounded corners] (-3.5,-2.65) node(B){} rectangle +(1.8,0.3);
+    \draw[<-, gred] (B) +(0,0.15) -- +(-1.8,0.4) node[anchor=south] {Dati violati};
+  \end{tikzpicture}
+\end{myframe}
+
+\begin{myframe}{Come vengono salvate le password sui server}
+  Le password sui server non vengono salvate \textbf{in chiaro}, ma \textbf{criptate} (usando una funzione di hash).
+
+  \pause\medskip
+  Dalla password criptata non è possibile risalire alla password originale. Così se succede un \textbf{data breach} non è possibile ottenerle.
+
+  \pause\medskip
+  Per controllare se la password inserita al login è corretta si cripta la password inserita e si verifica che coincida con quella salvata già criptata.
+
+  \texttt{cripta(password\_inserita) = password\_criptata ???}
+\end{myframe}
+
+\begin{myframe}{Le nostre password sono al sicuro?}
+  \pause
+  {\Huge\textbf{NO!}}
+  \pause
+  \only<+->{
+    \medskip
+    \begin{itemize}[<+(-1)->]
+      \item Non tutti i siti criptano le password
+      \item Alcune funzioni di criptazione sono obsolete (es. MD5): esistono delle tabelle che forniscono la funzione inversa
+      \item Esistono dei tool (es. \href{https://www.openwall.com/john/}{John the Ripper}) che tentano di recuperare le password dalla loro versione criptata
+    \end{itemize}
+  }
+\end{myframe}
+
+\begin{myframe}{John the Ripper}
+  Prova con tutte le password in un lista finché non trova quella giusta. È anche possibile generare password simili.
+
+  \pause
+  \vspace*{-12pt}
+  \includegraphics[width=.8\textwidth]{img/john}
+  \vspace*{-19pt}
+
+  \pause
+  È quindi facile decriptare password che contengono parole comuni.
+  % TODO Enigma
+\end{myframe}
+
+\begin{myframe}{Le password più usate}
+  \pause
+  \begin{itemize}[<+->]
+    \item 1234, 123456, abc123
+    \item password
+    \item qwerty
+    \item baseball, calcio
+    \item letmein
+    \item 111111
+    \item uguale all'username
+    \item data di nascita
+  \end{itemize}
+
+  \visible<+->{
+    È quindi necessario creare delle \textbf{password robuste} che contengano lettere, numeri e simboli casuali.
+  }
+
+  \visible<+->{
+    È anche importante non usare la stessa password per più di un servizio.
+  }
+\end{myframe}
+
+\begin{myframe}{Come ricordarsi le password}
+  Come fare a ricordarsi tante password così difficili?
+  \pause
+  \begin{itemize}[<+->]
+    \item \stafter<.>{Le scrivo su un foglietto}
+    \item \stafter<.>{Le scrivo su un file}
+    \item \stafter<.>{Le salvo sul cloud}
+    \item \stafter<.>{Le dico ad un amico}
+    \item Uso un password manager: basta ricordarsi una password per saperle tutte
+  \end{itemize}
+\end{myframe}

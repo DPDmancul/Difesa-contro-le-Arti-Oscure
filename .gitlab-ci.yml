@@ -1,0 +1,13 @@
+stages:
+  - production
+
+compile:
+  image: aergus/latex
+  stage: production
+  script:
+    - make
+  artifacts:
+    paths:
+      - slides/*.pdf
+      - print/*.pdf
+
