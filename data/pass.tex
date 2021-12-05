@@ -1,3 +1,5 @@
+%! TeX root = ../Parte1.tex
+
  \section{Password}
 
 \begin{myframe}{Data breach}
@@ -91,4 +93,57 @@
     \item \stafter<.>{Le dico ad un amico}
     \item Uso un password manager: basta ricordarsi una password per saperle tutte
   \end{itemize}
+\end{myframe}
+
+\begin{myframe}{Bitwarden}
+  Uno dei tanti password manager disponibili.
+
+  \medskip\pause
+  Gratuito ed open source.
+
+  \medskip\pause
+  \begin{itemize}
+    \item Estensione per Browser
+    \item App per telefono
+    \item Programma per computer
+  \end{itemize}
+\end{myframe}
+
+\begin{myframe}{Login con password manager}
+  I password manager solitamente riconoscono i campi di login e le compilano automaticamente.
+
+  \medskip\pause
+  In caso contrario si può selezionare l'icona dell'estensione e cliccare sull'account giusto per la compilazione automatica.
+
+  \begin{tikzpicture}
+    \node at (0,0) {\includegraphics[width=.45\textwidth]{img/login}};
+    \draw[<-, gred] (0,0.8) -- +(-2,-1) node[anchor=north] {Compilazione automatica};
+    \draw[<-, gred] (1.9,0.8) -- +(-1,-0.5) node[anchor=north] {Mostra dati};
+    \draw[<-, gred] (2.25,0.8) -- +(0,-1) node[anchor=north] {Copia username};
+    \draw[<-, gred] (2.6,0.8) -- +(1,-0.5) node[anchor=north] {~~~Copia password};
+  \end{tikzpicture}
+\end{myframe}
+
+\begin{myframe}{Login con password manager}
+  Si integra anche con la compilazione automatica delle app
+  \begin{figure}
+    \includegraphics[width=.5\textwidth]{img/loginapp}
+  \end{figure}
+\end{myframe}
+
+\begin{myframe}{Creare password sicure}
+  \begin{figure}
+    \includegraphics[height=.8\paperheight]{img/generatepass}
+  \end{figure}
+\end{myframe}
+
+\begin{myframe}{Salvare le password}
+  Quando ci si registra in un sito il password manager dovrebbe chiedere se vuoi salvare le credenziali:
+
+  \begin{figure}
+    \includegraphics[width=\textwidth]{img/savepass}
+  \end{figure}
+
+  \medskip\pause
+  In caso contrario è possibile salvarle manualmente.
 \end{myframe}
