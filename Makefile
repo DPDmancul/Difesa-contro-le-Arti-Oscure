@@ -9,7 +9,7 @@ $(FORMATS): %: $(addprefix %/,$(SOURCES:.tex=.pdf))
 
 %.pdf:
 	mkdir -p $(dir $@)/data
-	$(LATEX) -outdir=$(dir $@) $(if $(findstring print,$@),-usepretex='\def\handout{}') $(notdir $(@:.pdf=.tex))
+	$(LATEX) -outdir=$(dir $@) $(if $(findstring print,$@),-usepretex='\def\handout{}') $(notdir $*.tex)
 
 .PHONY: clean
 clean:

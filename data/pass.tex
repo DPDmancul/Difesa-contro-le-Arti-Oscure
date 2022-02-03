@@ -1,18 +1,23 @@
 %! TeX root = ../Parte1.tex
 
- \section{Password}
+\section{Password}
 
 \begin{myframe}{Data breach}
   Sebbene i server siano protetti, può capitare che un hacker/cracker vi acceda (ad esempio mediante una \emph{SQL injection}) e riesca a leggere i dati degli utenti.
 
   \pause\medskip
   I dati ottenuti vengono spesso venduti (dai cracker) ad aziende interessate oppure resi pubblici (dagli hacker) affinché i gestori del servizio riparino le falle e gli utenti cambino le proprie credenziali.
+\end{myframe}
 
-  \pause\medskip
-  Ci sono dei servizi gratuiti che ti informano se il tuo utente è stato violato, come \href{https://haveibeenpwned.com/}{Have I Been Pwned?} e \href{https://monitor.firefox.com/}{Firefox Monitor}.
+\begin{myframe}{Vendita dati}
+    \includegraphics[width=.9\textwidth]{img/venditadati}
+\end{myframe}
+\begin{myframe}{Esempio data breach}
+    \includegraphics[width=.9\textwidth]{img/databreach}
 \end{myframe}
 
 \begin{myframe}{Firefox Monitor}
+  Ci sono dei servizi gratuiti che ti informano se il tuo utente è stato violato, come \href{https://haveibeenpwned.com/}{Have I Been Pwned?} e \href{https://monitor.firefox.com/}{Firefox Monitor}.
   \begin{tikzpicture}
     \node at (0,0) {\includegraphics[width=\textwidth]{img/monitor}};
     \draw[gred, rounded corners] (-4,-1.7) node (A){} rectangle +(2,0.3);
@@ -147,3 +152,26 @@
   \medskip\pause
   In caso contrario è possibile salvarle manualmente.
 \end{myframe}
+
+\begin{myframe}{Altri vantaggi dei password manager}
+  \begin{itemize}
+    \item Difende da \textbf{keylogger}, non dovendo digitare la password;
+    \item Difende da siti di \textbf{phishing}: la compilazione automatica funziona solo sul sito originale.
+  \end{itemize}
+\end{myframe}
+
+\begin{myframe}{Passphrases}
+  Quando non si può usare un password manager è meglio usare  le \textbf{passphrases}\\al posto delle password: sono più facili da ricordare e altrettanto sicure.
+
+  \pause\bigskip
+  gamma-pastel-head-astound-bottling-detached
+
+  \pause\bigskip
+  {\raggedright\textbf{Importante}\\}
+  \begin{itemize}
+    \item Le parole devono essere casuali (i password manager possono generarle)
+    \item Devono esserci almeno 6 parole
+    \item meglio cambiare una lettera a caso con un numero e una con un simbolo
+  \end{itemize}
+\end{myframe}
+
