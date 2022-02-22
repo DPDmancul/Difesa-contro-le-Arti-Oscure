@@ -41,7 +41,59 @@
   \end{itemize}
 \end{myframe}
 
+\begin{myframe}{Software per backup}
+  \begin{description}
+    \item[GNU/Linux] Déjà Dup, Borg, \dots
+    \item[Windows] Backup e ripristino
+    \item[MacOS] Time Machine
+  \end{description}
+  \pause\bigskip
 
+  \textbf{Importante!}
+  \begin{itemize}[<+->]
+    \item Verificate di eseguire il backup e non solo salvare il progetto.
+    \item Periodicamente controllate che i backup possano essere ripristinati correttamente.
+  \end{itemize}
+\end{myframe}
 
+\begin{myframe}{Backup configurazione}
+  Oltre al backup dei file può essere utile il backup della configurazione (impostazioni, pacchetti installati, \dots).
+  \begin{description}[<+->]
+    \item[dotfiles] Backup file di configurazione. Spesso condivisi su GitLab, Codeberg, SourceHut, GitHub, \dots
+    \item[Timeshift] Backup pacchetti e impostazioni. Può sfruttare snapshot BTRFS.
+    \item[MxLinux snapshot] Crea un'immagine avviabile del sistema corrente.
+    \item[Nix, NixOs, Guix] Gestore dei pacchetti (Nix; funziona anche su MacOS) e distribuzioni GNU/Linux (NixOS, Guix) interamente configurabili da un singolo file. Supportano rollback all'avvio.
+  \end{description}
+\end{myframe}
+
+\begin{myframe}{Backup del cloud}
+  Non abbiamo \textbf{nessuna garanzia} i nostri dati sul cloud siano per sempre:\\bisogna fare un backup anche di quelli.
+
+  \pause\bigskip\bigskip
+
+  Se invece volgiamo un backup di un contenuto pubblico su internet\\possiamo usare the Wayback Machine.
+
+  Molto utile anche per citare siti web che potrebbero sparire o essere modificati.
+\end{myframe}
+
+\begin{myframe}{Recupero in extremis}
+  Se non riusciamo più ad accendere il computer e abbiamo dati che non sono stati salvati su un backup si può tentare un ripristino con una \textbf{live GNU/Linux}:
+  \pause
+  \begin{enumerate}[<+->]
+    \item Creare una chiavetta live con una distro GNU/Linux;
+    \item Avviare da chiavetta sul computer fuori uso;
+    \item Col file manager copiare i file dal disco del computer su un disco esterno.
+  \end{enumerate}
+
+  \bigskip
+  \only<+->{La stessa procedura può essere usata da \textbf{malintenzionati} per spiare, ma anche per cambiare file (e configurazioni nel sistema): per questo è importante criptare il disco.}
+\end{myframe}
+
+\begin{myframe}{Diversi tipi di formattazione}
+  \begin{description}
+    \item[Rapida (default)] Cancella mappatura dei blocchi (l'``indice''), ma non i dati.\\È possibile recuperare file con buona probabilità.
+    \item[A basso livello] Cancella tutto, anche i dati. È quasi impossibile recuperare i file.
+  \end{description}
+\end{myframe}
 
 
